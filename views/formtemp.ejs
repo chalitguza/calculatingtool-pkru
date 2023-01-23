@@ -20,7 +20,7 @@
                     <form action="/formtemp" method="post" onsubmit="return validateForm()">
                         <div class="form-group">
                             <label for="temperature">ค่าอุณหภูมิ:</label>
-                            <input type="text" class="form-control" id="temperature" name="temperature" placeholder="ระบุค่าอุณหภูมิ" >
+                            <input type="number" class="form-control" id="temperature" name="temperature" placeholder="ระบุค่าอุณหภูมิ" >
                         </div>
                             <div class="form-group">
                                 <label for="unit">หน่วยการแปลง:</label>
@@ -35,6 +35,7 @@
                                     <label class="form-check-label text-warning" for="unit-c">แปลงจากองศาเซลเซียสไปเป็นองศาฟาเรนไฮต์</label>
                                 </div>
 
+
                                 <div class="text-center">
                                     <input type="submit" class="btn btn-primary mr-3" value="ส่งข้อมูล">
                                     <input type="reset" class="btn btn-secondary" value="ล้างข้อมูล">
@@ -43,6 +44,7 @@
                             </div>
                             
                     </form>
+            
                             <script>
                                 function validateForm() {
                                     var temperature = document.getElementById("temperature").value;
