@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 
-
+//=======================================================
 var port = process.env.PORT || 3000;
 app.listen(port, "0.0.0.0", function() {
 console.log("Listening on Port "+port);
@@ -11,7 +11,7 @@ console.log("Listening on Port "+port);
 
 
 const request = require('request');
-var url1 = 'https://bieuwtrade-4qpo.onrender.com/'
+var url1 = 'https://pkru-calculatingtool.onrender.com/'
 
 function pingWebsite() {
 	request(url1, (error, response, body) => {
@@ -29,9 +29,9 @@ setInterval(() => {
   pingWebsite();
   count++;
   console.log(`Number of pings: ${count}`);
-}, 10 * 60 * 1000); // every 14 minutes
+}, 1 * 60 * 1000); // every 14 minutes
 
-
+//=======================================================
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
