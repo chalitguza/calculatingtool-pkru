@@ -54,14 +54,17 @@ app.get('/formgrade', (req, res) => {
     res.render('formgrade')
 })
 
+
 app.post('/formgrade', (req, res) => {
     let score = req.body.score
     let midterm = req.body.midterm
     let final = req.body.final
     let total = parseInt(score) + parseInt(midterm) + parseInt(final)
     let grade
+    let Emoji = '😊'
     if (total >= 80) {
         grade = 'A'
+        Emoji = '😎'
     } else if (total >= 70 && total < 79) {
         grade = 'B'
     } else if (total >= 60 && total < 69) {
@@ -70,8 +73,9 @@ app.post('/formgrade', (req, res) => {
         grade = 'D'
     } else {
         grade = 'E'
+        Emoji = '😥'
     }
-    res.render('resultgrade.ejs', { total, grade })
+    res.render('resultgrade.ejs', { total, grade ,Emoji })
 })
 
 app.listen(3000, () => {
