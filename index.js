@@ -19,14 +19,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/formtemp', (req, res) => {
-    res.render('formtemp.ejs');
+    res.render('formtemp');
 });
 
 
 
 
 
-app.post('/', (req, res) => {
+app.post('/formtemp', (req, res) => {
     const temperature = req.body.temperature;
     const unit = req.body.unit;
     if(isNaN(temperature) || (unit !== 'F' && unit !== 'C')){
@@ -50,7 +50,29 @@ app.post('/', (req, res) => {
 });
 
 
+app.get('/formgrade', (req, res) => {
+    res.render('formgrade')
+})
 
+app.post('/formgrade', (req, res) => {
+    let score = req.body.score
+    let midterm = req.body.midterm
+    let final = req.body.final
+    let total = parseInt(score) + parseInt(midterm) + parseInt(final)
+    let grade
+    if (total >= 80) {
+        grade = 'A'
+    } else if (total >= 70 && total < 79) {
+        grade = 'B'
+    } else if (total >= 60 && total < 69) {
+        grade = 'C'
+    } else if (total >= 50 && total < 59) {
+        grade = 'D'
+    } else {
+        grade = 'E'
+    }
+    res.render('resultgrade.ejs', { total, grade })
+})
 
 app.listen(3000, () => {
     console.log('Server started on port 3000');

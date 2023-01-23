@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grade Result</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="./css/styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="container mt-5 d-flex justify-content-center">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header text-center">
+                    <h5>ผลการคำนวณเกรด</h5>
+                </div>
+                <div class="card-body text-center" style="color:black">
+                    <div class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Result Grade</div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size:29px">คะแนนรวม <%= total %> <br>เกรด <%= grade %></h5>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="/formgrade" class="btn btn-primary mr-3">เริ่มใหม่อีกครั้ง</a>
+                        <a href="/" class="btn btn-warning">กลับสู้หน้าหลัก</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>    
