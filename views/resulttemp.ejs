@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Temperature Calculator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="./css/styles.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header text-center">
+                    <h5>ผลการแปลงอุณหภูมิ</h5>
+                </div>
+                <div class="card-body">
+                    <p>คุณป้อน: <%= temperature %></p>
+                    <ul>
+                        <li><p>แปลงจาก  <%= unit === 'C' ? 'องศาเซลเซียส (°C)' : 'องศาฟาเรนไฮต์ (°F)' %>&nbsp;&nbsp;&nbsp; ไปเป็น👉 &nbsp;&nbsp;&nbsp;  <%= unit === 'F' ? 'องศาเซลเซียส (°C)' : 'องศาฟาเรนไฮต์ (°F)' %></p></li>
+
+                    </ul>
+
+                    <center>
+                        <div class="card text-white bg-dark mb-3" style="max-width: 45%;">
+                            <div class="card-header">Result Temperature</div>
+                            <div class="card-body" style="color:black">
+                                <div class="d-flex justify-content-between">
+                                    <div class="card bg-light mb-3" style="max-width: 18rem;">
+                                        <div class="card-header"><%= unit === 'C' ? 'องศาเซลเซียส (°C)' : 'องศาฟาเรนไฮต์ (°F)' %></div>
+                                        <div class="card-body">
+                                    
+                                            <h5 class="card-title"><%= temperature %> <%= unit === 'C' ? '(°C)' : '(°F)' %></h5>
+                                        </div>
+                                    </div>
+                                    <h1 style="color:rgb(255, 255, 255)">=</h1>
+                                    <div class="card bg-light mb-3" style="max-width: 18rem;">
+                                        <div class="card-header"><%= unit === 'F' ? 'องศาเซลเซียส (°C)' : 'องศาฟาเรนไฮต์ (°F)' %></div>
+                                        <div class="card-body">
+                                
+                                            <h5 class="card-title"><%= result %> <%= unit === 'F' ? '(°C)' : '(°F)' %></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </center>
+
+                
+
+
+                   
+                    <a href="/formtemp" class="btn btn-primary">เริ่มใหม่อีกครั้ง</a>
+                    <a href="/" class="btn btn-warning">กลับสู้หน้าหลัก</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

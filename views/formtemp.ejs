@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="./css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+
+    <body>
+        <div class="container mt-5">
+            <div class="card text-white bg-dark">
+                <div class="card-header text-center">
+                    <h5>ฟอร์มการแปลงอุณหภูมิ</h5>
+                </div>
+                <div class="container">
+                    <form action="/" method="post" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="temperature">ค่าอุณหภูมิ:</label>
+                            <input type="text" class="form-control" id="temperature" name="temperature">
+                        </div>
+                            <div class="form-group">
+                                <label for="unit">หน่วยการแปลง:</label>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="btn-check" type="radio" id="unit-f" name="unit" value="F">
+                                    <label class="form-check-label text-warning" for="unit-f">แปลงจากองศาฟาเรนไฮต์ไปเป็นองศาเซลเซียส</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="unit-c" name="unit" value="C">
+                                    <label class="form-check-label text-warning" for="unit-c">แปลงจากองศาเซลเซียสไปเป็นองศาฟาเรนไฮต์</label>
+                                </div>
+
+
+                                <div class="text-center">
+                                    <input type="submit" class="btn btn-primary mr-3" value="Submit">
+                                    <input type="reset" class="btn btn-secondary" value="Clear">
+                                </div>
+                                <a href="/" class="btn btn-warning">กลับสู้หน้าหลัก</a>
+                            </div>
+                            
+                    </form>
+            
+                            <script>
+                                function validateForm() {
+                                    var temperature = document.getElementById("temperature").value;
+                                    var unit = document.querySelector('input[name="unit"]:checked').value;
+                                    if (temperature == "" || temperature == null) {
+                                        alert("Please enter a temperature.");
+                                        return false;
+                                    }
+                                    if (isNaN(temperature) || (unit !== "F" && unit !== "C")) {
+                                        alert("Please enter a valid temperature and select a unit.");
+                                        return false;
+                                    }
+                                    return true;
+                                }
+                            </script>
+                        </div>
+            </div>
+        </div>
+    </body>
+
+
+            
+    
+    
+    </body>
+</html>
