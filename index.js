@@ -88,11 +88,11 @@ app.post('/formgrade', (req, res) => {
     if (total >= 80) {
         grade = 'A'
         Emoji = '😎'
-    } else if (total >= 70 && total < 79) {
+    } else if (total >= 70 && total <= 79) {
         grade = 'B'
-    } else if (total >= 60 && total < 69) {
+    } else if (total >= 60 && total <= 69) {
         grade = 'C'
-    } else if (total >= 50 && total < 59) {
+    } else if (total >= 50 && total <= 59) {
         grade = 'D'
     } else {
         grade = 'E'
