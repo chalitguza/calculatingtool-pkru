@@ -2,6 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+
+
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port "+port);
+});
+
+
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
