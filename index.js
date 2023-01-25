@@ -70,7 +70,7 @@ app.post('/formgrade', (req, res) => {
 
 //=======================================================
 const request = require('request');
-var url1 = 'https://pkru-calculatingtool.onrender.com/'
+var url1 = 'https://pkru-calculatingtool.cyclic.app/'
 
 function pingWebsite() {
 	request(url1, (error, response, body) => {
