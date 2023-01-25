@@ -87,7 +87,7 @@ setInterval(() => {
   pingWebsite();
   count++;
   console.log(`Number of pings: ${count}`);
-}, 1 * 60 * 1000); // every 14 minutes
+}, 14 * 60 * 1000); // every 14 minutes
 
 //=======================================================
 
