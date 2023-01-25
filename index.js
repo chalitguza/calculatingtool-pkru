@@ -2,37 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-
-//=======================================================
-var port = process.env.PORT || 3000;
-app.listen(port, "0.0.0.0", function() {
-console.log("Listening on Port "+port);
-});
-
-
-const request = require('request');
-var url1 = 'https://pkru-calculatingtool.onrender.com/'
-
-function pingWebsite() {
-	request(url1, (error, response, body) => {
-		if (!error && response.statusCode === 200) {
-			console.log('Website loaded successfully');
-		} else {
-			console.log('Error loading website');
-		}
-	});
-}
-
-
-let count = 0;
-setInterval(() => {
-  pingWebsite();
-  count++;
-  console.log(`Number of pings: ${count}`);
-}, 1 * 60 * 1000); // every 14 minutes
-
-//=======================================================
-
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
@@ -44,10 +13,6 @@ app.get('/', (req, res) => {
 app.get('/formtemp', (req, res) => {
     res.render('formtemp');
 });
-
-
-
-
 
 app.post('/formtemp', (req, res) => {
     const temperature = req.body.temperature;
@@ -101,6 +66,32 @@ app.post('/formgrade', (req, res) => {
     res.render('resultgrade.ejs', { total, grade ,Emoji })
 })
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
+
+
+//=======================================================
+const request = require('request');
+var url1 = 'https://pkru-calculatingtool.onrender.com/'
+
+function pingWebsite() {
+	request(url1, (error, response, body) => {
+		if (!error && response.statusCode === 200) {
+			console.log('Website loaded successfully');
+		} else {
+			console.log('Error loading website');
+		}
+	});
+}
+
+let count = 0;
+setInterval(() => {
+  pingWebsite();
+  count++;
+  console.log(`Number of pings: ${count}`);
+}, 1 * 60 * 1000); // every 14 minutes
+
+//=======================================================
+
+let port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port "+port);
 });
